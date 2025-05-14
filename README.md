@@ -13,5 +13,5 @@ At this point, the file must be passed as a CLI argument, otherwise it'll not op
 * WASD - Move left, right, back, forward
 * Shift - Move down
 * Space - Move up
-* Mouse drag - Rotate
+* Mouse drag - Look around
 * Ctrl (hold) - Move faster
