@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP4Viewer", "LP4Viewer\LP4Viewer.csproj", "{CF8D2A9F-6A7C-4C9E-841F-F53728320A32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF8D2A9F-6A7C-4C9E-841F-F53728320A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8D2A9F-6A7C-4C9E-841F-F53728320A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8D2A9F-6A7C-4C9E-841F-F53728320A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8D2A9F-6A7C-4C9E-841F-F53728320A32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

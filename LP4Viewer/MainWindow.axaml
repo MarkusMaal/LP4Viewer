@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:LP4Viewer"
+        mc:Ignorable="d" Width="800" Height="450"
+        x:Class="LP4Viewer.MainWindow" Foreground="White"
+        Loaded="Control_OnLoaded"
+        Title="LP4Viewer">
+    <Grid RowDefinitions="*,100" Background="DarkBlue">
+        <TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">OpenGL error</TextBlock>
+        <controls:CubeRenderingTkOpenGlControl Focusable="True" MinWidth="200" MinHeight="200" Name="GlControl"></controls:CubeRenderingTkOpenGlControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Background="Black">
+            <Label Margin="5" Name="FPSLabel">No info</Label>
+            <Label Margin="5" Name="MoreInfoLabel">No info</Label>
+            <Button Margin="10" VerticalAlignment="Top" Click="ImportLP4_Click">Import LP4</Button>
+        </StackPanel>
+    </Grid>
+</Window>
