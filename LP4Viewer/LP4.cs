@@ -13,8 +13,11 @@ public class LP4
     {
         data = File.ReadAllBytes(Filename);
         var i = 0;
-        
-        //AppendVerticies(0x8080);
+        if (Program.ForceLoad)
+        {
+            AppendVerticies(0x0, data.Length / 0x10 - 0x30);
+            return;
+        }
         while (i < data.Length - 0x20)
         {
             float f, f2, f3, f4;

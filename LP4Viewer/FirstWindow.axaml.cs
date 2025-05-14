@@ -54,4 +54,9 @@ public partial class FirstWindow : Window
         var actualFile = Uri.UnescapeDataString(file.Path.AbsolutePath);
         LocationBox.Text = actualFile;
     }
+
+    private void ForceLoad_OnIsCheckedChanged(object? sender, RoutedEventArgs e)
+    {
+        Program.ForceLoad = ForceLoad.IsChecked!.Value;
+    }
 }
