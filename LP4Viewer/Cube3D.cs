@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Avalonia;
 using Avalonia.Input;
 using LP4Viewer.Shaders;
@@ -35,8 +36,8 @@ namespace LP4Viewer;
             : new LP4(Program.Args[0]).GetVerticies();
         private readonly uint[] _indices =
         {
-            0, 1, 3, // first triangle
-            1, 2, 3 // second triangle
+            0, 1, 2, // first triangle
+            6, 5, 4, // second triangle
         };
 
         public CubeRenderingTkOpenGlControl()
@@ -45,6 +46,17 @@ namespace LP4Viewer;
             
             //Initial camera facing update
             UpdateCameraFront();
+        }
+
+        public string GetVertices()
+        {
+            StringBuilder sb = new();
+            for (int i = 0; i < _vertices.Length; i+=3)
+            {
+                sb.Append($"X={_vertices[i]},Y={_vertices[i+1]},Z={_vertices[i+2]}\n");
+            }
+
+            return sb.Length > 0 ? sb.ToString()[..(sb.Length - 1)] : "";
         }
 
 
@@ -108,7 +120,7 @@ namespace LP4Viewer;
 
             //Configure texture coordinate structure
             var texCoordLocation = _shader.GetAttribLocation("aTexCoord");
-            GL.VertexAttribPointer(texCoordLocation, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
+            GL.VertexAttribPointer(texCoordLocation, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3* sizeof(float));
             GL.EnableVertexAttribArray(texCoordLocation);
 
             //Set up the EBO
@@ -165,7 +177,7 @@ namespace LP4Viewer;
             
             if (KeyboardState.IsKeyDown(Key.LeftCtrl))
             {
-                effectiveSpeed *= 2;
+                effectiveSpeed *= 10;
             }
 
             if (KeyboardState.IsKeyDown(Key.W))

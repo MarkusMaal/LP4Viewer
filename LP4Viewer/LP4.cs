@@ -22,7 +22,6 @@ public class LP4
             f2 = BitConverter.ToSingle(data.Skip(i + 0x4).Take(4).ToArray(), 0);
             f3 = BitConverter.ToSingle(data.Skip(i + 0xc).Take(4).ToArray(), 0);
             f4 = BitConverter.ToSingle(data.Skip(i + 0x1c).Take(4).ToArray(), 0);
-
             if ((f == f2) && (f == f3) && (f4 == 1f))
             {
                 var len = BitConverter.ToInt32(data.Skip(i - 0x10).Take(4).ToArray());

@@ -13,7 +13,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" Background="Black">
             <Label Margin="5" Name="FPSLabel">No info</Label>
             <Label Margin="5" Name="MoreInfoLabel">No info</Label>
-            <Button Margin="10" VerticalAlignment="Top" Click="ImportLP4_Click">Import LP4</Button>
+            <ListBox Margin="5" Name="Vertices" Width="500"></ListBox>
         </StackPanel>
     </Grid>
 </Window>

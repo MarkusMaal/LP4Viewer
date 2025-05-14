@@ -24,24 +24,11 @@ public partial class MainWindow : Window
             MoreInfoLabel.Content = GlControl.GetInfo(true);
         };
         dpt.Start();
-    }
-
-    private async void ImportLP4_Click(object? sender, RoutedEventArgs e)
-    {
-        // Get top level from the current control. Alternatively, you can use Window reference instead.
-        var topLevel = TopLevel.GetTopLevel(this);
-
-        // Start async operation to open the dialog.
-        var files = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        foreach (var s in GlControl.GetVertices().Split("\n"))
         {
-            Title = "Open LP4",
-            AllowMultiple = false
-        });
+            Vertices.Items.Add(s);
+        }
 
-        if (files.Count < 1) return;
-        // Open reading stream from the first file.
-        var file = files[0];
-        var actualFile = Uri.UnescapeDataString(file.Path.AbsolutePath);
-        GlControl.ImportLP4(actualFile);
+        GlControl.Focus();
     }
 }
