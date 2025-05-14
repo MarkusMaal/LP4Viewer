@@ -14,4 +14,5 @@ At this point, the file must be passed as a CLI argument, otherwise it'll not op
 * Shift - Move down
 * Space - Move up
 * Mouse drag - Look around
+* Scroll - Change field of view (FOV)
 * Ctrl (hold) - Move faster
